@@ -42,7 +42,7 @@ public class Demo{
         System.out.println(arrDeepToString(weak));
         weak = create2DArrayRandomized(5,4,4);
         System.out.println(arrDeepToString(weak));
-        weak = create2DArrayRandomized(1,1,0);
+        weak = create2DArrayRandomized(4,10,100);
         System.out.println(arrDeepToString(weak));
     }
 
