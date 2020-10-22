@@ -1,18 +1,78 @@
 public class Demo{
-        public static void main(String[] args){
-            int a = 5;
-            if (args.length > 0){
-                a = Integer.parseInt(args[0]);
-            }
-            printLoop(a);
+    public static void main(String[] args){
+        int input = 5;
+        if (args.length > 0){
+            input = Integer.parseInt(args[0]);
         }
-    
-        public static void printLoop(int n){
-            for(int i=1; i<=n; i++){
-            for(int j=0; j<1+n-i; j++){
-                System.out.print(i);
+        printLoop(input);
+
+        /*
+        int[] a = {1};
+        int[] b = {1,2};
+        int[] c = {1,2,3};
+        int[] d = {1,2,3,4};
+        int[] e = {1,2,3,4,5};
+        System.out.println(arrToString(a));
+        System.out.println(arrToString(b));
+        System.out.println(arrToString(c));
+        System.out.println(arrToString(d));
+        System.out.println(arrToString(e));
+        int[][]weak = {a,b,c,d,e};
+        */
+        //System.out.println(arrDeepToString(weak));
+        int[][]weak = create2DArray(3,1,5);
+        System.out.println(arrDeepToString(weak));
+        weak = create2DArray(3,2,5);
+        System.out.println(arrDeepToString(weak));
+        weak = create2DArray(2,2,100);
+        System.out.println(arrDeepToString(weak));
+        weak = create2DArray(1,1,1);
+        System.out.println(arrDeepToString(weak));
+        weak = create2DArray(5,4,4);
+        System.out.println(arrDeepToString(weak));
+        weak = create2DArray(1,1,0);
+        System.out.println(arrDeepToString(weak));
+    }
+
+    public static void printLoop(int n){
+        for(int i=1; i<=n; i++){
+        for(int j=0; j<1+n-i; j++){
+            System.out.print(i);
+        }
+        System.out.println();
+        }
+    }
+
+    public static String arrToString(int[]arr){
+        String out = "{";
+        for(int i = 0; i<arr.length; i++){
+            out = out + arr[i];
+            if (i<arr.length-1){
+            out += ", ";
             }
-            System.out.println();
+        }
+        return out + '}';
+        }
+
+        public static String arrDeepToString(int[][] arr){
+        String out = "{";
+        for(int i = 0; i<arr.length; i++){
+            out = out + arrToString(arr[i]);
+            if (i<arr.length-1){
+            out += ", ";
             }
+        }
+        return out + '}';
+        }
+
+        public static int[][] create2DArray(int rows, int cols, int maxValue){
+            maxValue++;
+            int[][] output = new int[rows][cols];
+            for(int c=0; c<cols; c++){
+                for (int r=0; r<rows; r++){
+                    output[r][c]= (int)Math.floor(Math.random()*maxValue);
+                }
+            }
+            return output;
         }
 }
