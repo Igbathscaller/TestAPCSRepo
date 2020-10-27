@@ -18,7 +18,6 @@ public class Demo{
         System.out.println(arrToString(d));
         System.out.println(arrToString(e));
         int[][]weak = {a,b,c,d,e};
-        */
         //System.out.println(arrDeepToString(weak));
         int[][]weak = create2DArray(3,1,5);
         System.out.println(arrDeepToString(weak));
@@ -44,6 +43,7 @@ public class Demo{
         System.out.println(arrDeepToString(weak));
         weak = create2DArrayRandomized(4,10,100);
         System.out.println(arrDeepToString(weak));
+        */
     }
 
     public static void printLoop(int n){
