@@ -66,7 +66,7 @@ public class Demo{
         return out + '}';
         }
 
-        public static String arrDeepToString(int[][] arr){
+    public static String arrayDeepToString(int[][] arr){
         String out = "{";
         for(int i = 0; i<arr.length; i++){
             out = out + arrToString(arr[i]);
@@ -77,7 +77,7 @@ public class Demo{
         return out + '}';
         }
 
-        public static int[][] create2DArray(int rows, int cols, int maxValue){
+    public static int[][] create2DArray(int rows, int cols, int maxValue){
             maxValue++;
             int[][] output = new int[rows][cols];
             for(int r=0; r<rows; r++){
@@ -87,7 +87,7 @@ public class Demo{
             }
             return output;
         }
-        public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue){
+    public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue){
             maxValue++;
             cols++;
             int[][] output = new int[rows][];
